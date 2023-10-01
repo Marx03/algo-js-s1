@@ -1,60 +1,47 @@
-class Pokemon {
-    constructor(name, dmg, def, hp, luck) {
-        this.name = name
-        this.dmg = dmg
-        this.def = def
-        this.hp = hp
-        this.luck = luck
-}
-}
+trajet(array)
 
-isLucky() {
-        if (laLuck <= Pokemon.luck) {
-            return true
-        } else {
-        return false
+const songs = ["Anissa de Wejdene", "Take me to Church de Hozier", "Falling de Trevor Daniel", "You put a spell on me de Austin Giorgio", "My favorite part de Mac Miller & Ariana Grande"]
+
+class Personnage {
+    constructor(name, mentalHealth) {
+        this.name = name ;
+        this.mentalHealth = mentalHealth ;
     }
 }
-    
-attackPokemon() {
-        if(laLuck >= 0) {
-            giratina.hp -= betaArceus.dmg
+
+let John = new Personnage("John", 100) 
+
+console.log("John souhaite rentrer chez lui en taxi et 30 feux rouges le séparent de sa maison.")
+console.log("Il ne veut plus entendre la chanson Anissa, et on le comprend, et changera donc de taxi si jamais la radio la passe.")
+
+trajet(array) {
+
+    let trafficLight = 30
+    let taxi = 1
+
+        while(this.mentalHealth>0 && trafficLight>0) {
+
+            songs[songs.length*Math.random()]
+            console.log(random, "La radio diffuse "+songsList[random]+ ".")
+
+            trafficLight --
+            console.log("Il reste "+trafficLight+" avant que John ne puisse rentrer chez lui.")
+
+            if(songsList[random] =="Anissa de Wejdene") {
+                console.log("La chanson Anissa passe à la radio")
+                John.mentalHealth-=1
+                console.log("John a perdu de la santé mentale.")
+                taxi+=1
+                console.log("John change de taxi. C'est dejà le "+taxi+"eme.")
+            }
+
+            if(trafficLight==0) {
+                console.log("John est finalement rentré. Son esprit est encore viable")
+                break
+            }
+
+            if(John.mentalHealth==0) {
+                console.log("John est devenu fou. Il explose")
+            }    
         }
-        
-        if(laLuck <= 0) {
-            betaArceus.hp -= giratina.dmg
-            break
-        }
-}
-
-let betaArceus = new Pokemon("BetaArceus", 10000, 100, 120, 0.5)
-let giratina = new Pokemon("Giratina", 15000, 100, 150, 0.5)
-
-var laLuck = Math.random()
-var sentenceQuandGiratinaTueArceus = "Une attaque de G inflige " + giratina.dmg + " points de dégats."
-var sentenceQuandArceusTueGiratina = "Arceus inflige violemment " + betaArceus.dmg + " points de dégats à Giratina"
-
-console.log(betaArceus)
-console.log(giratina)
-
-console.log("Beta Arceus et Giratina vont se battre")
-
-while(betaArceus.hp >= 0 && giratina.hp >= 0) {
-
-    console.log("Beta Arceus a 120 PV.")
-    console.log("G est a 150 PV.")
-    
-if(laLuck >= 0) {
-        console.log(sentenceQuandArceusTueGiratina)
-        console.log(attackPokemon)
-        console.log("Les PV de Giratina sont trop bas. Une lumière dorée resplendit. Le créateur a triomphé.")
-        break
     }
-        
-if(laLuck <= 0) {
-            console.log(sentenceQuandGiratinaTueArceus)
-            console.log(attackPokemon)
-            console.log("Beta Arceus a perdu. Le chaos est plus puissant. G règne en maitre.")
-            break
-        }
-}
